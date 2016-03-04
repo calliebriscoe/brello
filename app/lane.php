@@ -15,13 +15,4 @@ class lane extends Model
       return $this->hasMany('App\task');
   }
 
-
-   /**
-   * Get the tags of the lane.
-   */
-  public function tags()
-  {
-      return $this->hasMany('App\tag');
-  }
-
 }
