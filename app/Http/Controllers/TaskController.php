@@ -37,7 +37,7 @@ class TaskController extends Controller
      */
     public function show($id)
     {
-        //
+        return \App\task::find($id);
     }
 
     /**
@@ -60,6 +60,8 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $task = \App\task::find($id);
+        $task->delete();
+        Return $task;
     }
 }
