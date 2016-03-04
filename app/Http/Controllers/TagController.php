@@ -15,7 +15,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        return App\tag::all();
     }
 
     /**
@@ -37,7 +37,7 @@ class TagController extends Controller
      */
     public function show($id)
     {
-        //
+        return App\tag::find($id);
     }
 
     /**
@@ -60,6 +60,8 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tag = \App\tag::find($id);
+        $tag->delete();
+        return $tag;
     }
 }
