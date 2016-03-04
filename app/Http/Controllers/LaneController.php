@@ -26,7 +26,10 @@ class LaneController extends Controller
      */
     public function store(Request $request)
     {
-      //
+      $lane = new \App\lane;
+      $lane->name = $request->name;
+      $lane->save();
+      return $lane;
     }
 
     /**
@@ -50,7 +53,10 @@ class LaneController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $lane = \App\lane::find($id);
+        $lane->name = $request->name;
+        $lane->save();
+        return $lane;
     }
 
     /**
@@ -61,7 +67,7 @@ class LaneController extends Controller
      */
     public function destroy($id)
     {
-        $lane = \App\Lane::find($id);
+        $lane = \App\lane::find($id);
         $lane->delete();
         return $lane;
     }
