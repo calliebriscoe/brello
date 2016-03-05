@@ -26,7 +26,13 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tag = new \App\tag;
+        $tag->name = $request->name;
+        $tag->color = $request->color;
+        $tag->save();
+
+        return $tag;
+
     }
 
     /**
@@ -49,7 +55,11 @@ class TagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $tag = \App\tag::find($id);
+       $tag->name = $request->name;
+       $tag->color = $request->color;
+       $tag->save();
+
     }
 
     /**
