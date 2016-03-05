@@ -27,5 +27,17 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+
+  Route::resource('lane','LaneController',[
+    'except' => ['create','edit']
+  ]);
+
+  Route::resource('task','TaskController',[
+    'except' => ['create','edit']
+  ]);
+
+  Route::resource('tag','TagController',[
+    'except' => ['create','edit']
+  ]);
+
 });
