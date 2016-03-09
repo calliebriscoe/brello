@@ -40,7 +40,7 @@ class LaneController extends Controller
      */
     public function show($id)
     {
-        return \App\Lane:find($id);
+        return \App\lane::find($id);
     }
 
 

@@ -59,6 +59,7 @@ class TagController extends Controller
        $tag->name = $request->name;
        $tag->color = $request->color;
        $tag->save();
+       return $tag;
 
     }
 

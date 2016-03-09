@@ -26,7 +26,7 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        $task new App\task;
+        $task = new \App\task;
         $task->lane_id = $request->lane_id;
         $task->name = $request->name;
         $task->description = $request->description;
@@ -54,7 +54,7 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $task App\task::find($id);
+      $task = \App\task::find($id);
       $task->lane_id = $request->lane_id;
       $task->name = $request->name;
       $task->description = $request->description;
